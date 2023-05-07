@@ -1,5 +1,6 @@
 package com.example.demoasdasdqw.test;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
 import java.util.*;
@@ -9,10 +10,18 @@ import java.util.concurrent.Executors;
 
 public class TestListDemo {
 
+
     public static void main(String[] args) {
 
-
-
+    new Thread(){
+        @Override
+        public void run() {
+            for (int i = 0;i<10;i++){
+                System.out.println("11");
+            }
+        }
+    }.start();
+        System.out.println("222");
 
     }
 
@@ -45,7 +54,7 @@ public class TestListDemo {
 
 
 
-    @Bean
+    @Bean(name = "Demoapp")
     public List<Integer> addlist(){
         ArrayList<Integer> objects = new ArrayList<>();
         objects.add(12);
